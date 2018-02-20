@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/src/CVT.Galvanize.Api/obj/project.assets.json
+/src/CVT.Galvanize.Api/obj/**
+/src/CVT.Galvanize.Api/bin/**
+/src/.vs/CVT.Galvanize.Api/v15/**
