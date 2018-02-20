@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVT.Galvanize.Api", "CVT.Galvanize.Api\CVT.Galvanize.Api.csproj", "{9FC5F256-A0B8-4600-B72D-CD301504CB51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CVT.Galvanize.Api", "CVT.Galvanize.Api\CVT.Galvanize.Api.csproj", "{9FC5F256-A0B8-4600-B72D-CD301504CB51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVT.Galvanize.Data", "CVT.Galvanize.Data\CVT.Galvanize.Data.csproj", "{E2B17694-19F4-4398-9D52-1535544BBACF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{9FC5F256-A0B8-4600-B72D-CD301504CB51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FC5F256-A0B8-4600-B72D-CD301504CB51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FC5F256-A0B8-4600-B72D-CD301504CB51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2B17694-19F4-4398-9D52-1535544BBACF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2B17694-19F4-4398-9D52-1535544BBACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2B17694-19F4-4398-9D52-1535544BBACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2B17694-19F4-4398-9D52-1535544BBACF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

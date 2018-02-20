@@ -6,3 +6,8 @@
 /src/CVT.Galvanize.Api/obj/**
 /src/CVT.Galvanize.Api/bin/**
 /src/.vs/CVT.Galvanize.Api/v15/**
+/src/CVT.Galvanize.Data/bin/**
+/src/CVT.Galvanize.Data/obj/**
+/src/CVT.Galvanize.Data/StyleCop.Cache
+/src/.vs/config/applicationhost.config
+
