@@ -27,5 +27,6 @@ namespace CVT.Galvanize.Api.Models
         public int? ReferencesResponded { get; set; }
         public string ImportantNames { get; set; }
         public bool IsVolunteerCoordinator { get; set; }
+        public int Id { get; set; }
     }
 }

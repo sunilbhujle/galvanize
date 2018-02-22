@@ -10,6 +10,7 @@ namespace CVT.Galvanize.Api.Services
     public interface IVolunteerService
     {
         Task<IEnumerable<VolunteerModel>> SearchVolunteers();
+        Task<VolunteerModel> GetById(int Id);
     }
 
     public class VolunteerService : IVolunteerService
@@ -27,6 +28,7 @@ namespace CVT.Galvanize.Api.Services
             var result = new List<VolunteerModel>();
             await volunteers.ForEachAsync(v => result.Add(new VolunteerModel
             {
+                Id = v.Id,
                 FirstName = v.FirstName,
                 LastName = v.LastName,
                 AddressLine1 = v.AddressLine1,
@@ -54,5 +56,41 @@ namespace CVT.Galvanize.Api.Services
             return result;
         }
 
+        public async Task<VolunteerModel> GetById(int id)
+        {
+            var v = await _dbContext.Volunteers.FindAsync(id);
+            if (v == null)
+            {
+                throw new NotFoundException();
+            }
+
+            return new VolunteerModel
+            {
+                Id = v.Id,
+                FirstName = v.FirstName,
+                LastName = v.LastName,
+                AddressLine1 = v.AddressLine1,
+                AddressLine2 = v.AddressLine2,
+                City = v.City,
+                State = v.State,
+                Zip = v.Zip,
+                HomePhone = v.HomePhone,
+                CellPhone = v.CellPhone,
+                BusinessPhone = v.CellPhone,
+                Email1 = v.Email1,
+                Email2 = v.Email2,
+                Hippa = v.Hippa,
+                BackgroundCheck = v.BackgroundCheck,
+                MandatedReporter = v.MandatedReporter,
+                CsOrientationdate = v.CsOrientationdate,
+                CsInterest = v.CsInterest,
+                DateInterviewed = v.DateInterviewed,
+                Active = v.Active,
+                PostOrientationFollowupDate = v.PostOrientationFollowupDate,
+                ReferencesResponded = v.ReferencesResponded,
+                ImportantNames = v.ImportantNames,
+                IsVolunteerCoordinator = v.IsVolunteerCoordinator
+            };
+        }
     }
 }

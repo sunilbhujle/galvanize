@@ -18,12 +18,18 @@ namespace CVT.Galvanize.Api.Controllers
             _volunteerService = volunteerService;
         }
 
-        // GET: api/values
         [HttpGet]
         [Route("volunteers")]
         public async Task<IEnumerable<VolunteerModel>> Get()
         {
             return await _volunteerService.SearchVolunteers();
+        }
+
+        [HttpGet]
+        [Route("volunteers/{id}")]
+        public async Task<VolunteerModel> Get(int id)
+        {
+            return await _volunteerService.GetById(id);
         }
     }
 }
