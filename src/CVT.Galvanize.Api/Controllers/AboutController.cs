@@ -1,14 +1,14 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CVT.Galvanize.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api")]
     public class AboutController : Controller
     {
         // GET api/values
         [HttpGet]
+        [Route("about")]
         public async Task<AboutModel> Get()
         {
             return await Task.Run(() => new AboutModel

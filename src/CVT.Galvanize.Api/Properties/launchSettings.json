@@ -19,7 +19,7 @@
     "CVT.Galvanize.Api": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/values",
+      "launchUrl": "api/about",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

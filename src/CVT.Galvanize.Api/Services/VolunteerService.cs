@@ -1,24 +1,57 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using CVT.Galvanize.Api.Models;
 using CVT.Galvanize.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace CVT.Galvanize.Api.Services
 {
-    public class VolunteerService
+    public interface IVolunteerService
     {
-        private readonly IGalvanizeContext _dbContext;
+        Task<IEnumerable<VolunteerModel>> SearchVolunteers();
+    }
 
-        public VolunteerService(IGalvanizeContext dbContext)
+    public class VolunteerService : IVolunteerService
+    {
+        private readonly GalvanizeContext _dbContext;
+
+        public VolunteerService(GalvanizeContext dbContext)
         {
             _dbContext = dbContext;
         }
 
         public async Task<IEnumerable<VolunteerModel>> SearchVolunteers()
         {
-            throw new NotImplementedException();
-
+            var volunteers = _dbContext.Volunteers.AsQueryable();
+            var result = new List<VolunteerModel>();
+            await volunteers.ForEachAsync(v => result.Add(new VolunteerModel
+            {
+                FirstName = v.FirstName,
+                LastName = v.LastName,
+                AddressLine1 = v.AddressLine1,
+                AddressLine2 = v.AddressLine2,
+                City = v.City,
+                State = v.State,
+                Zip = v.Zip,
+                HomePhone = v.HomePhone,
+                CellPhone = v.CellPhone,
+                BusinessPhone = v.CellPhone,
+                Email1 = v.Email1,
+                Email2 = v.Email2,
+                Hippa = v.Hippa,
+                BackgroundCheck = v.BackgroundCheck,
+                MandatedReporter = v.MandatedReporter,
+                CsOrientationdate = v.CsOrientationdate,
+                CsInterest = v.CsInterest,
+                DateInterviewed = v.DateInterviewed,
+                Active = v.Active,
+                PostOrientationFollowupDate = v.PostOrientationFollowupDate,
+                ReferencesResponded = v.ReferencesResponded,
+                ImportantNames = v.ImportantNames,
+                IsVolunteerCoordinator = v.IsVolunteerCoordinator
+            }));
+            return result;
         }
 
     }

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace CVT.Galvanize.Data
 {
-    public partial class GalvanizeContext : DbContext, IGalvanizeContext
+    public partial class GalvanizeContext : DbContext
     {
         public virtual DbSet<ClientProvider> ClientProvider { get; set; }
         public virtual DbSet<CvtSites> CvtSites { get; set; }
