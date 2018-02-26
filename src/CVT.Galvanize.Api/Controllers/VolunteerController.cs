@@ -20,7 +20,7 @@ namespace CVT.Galvanize.Api.Controllers
 
         [HttpGet]
         [Route("volunteers")]
-        public async Task<IEnumerable<VolunteerModel>> Get()
+        public async Task<PagedResult<VolunteerModel>> Get()
         {
             return await _volunteerService.SearchVolunteers();
         }

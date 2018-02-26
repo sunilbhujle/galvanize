@@ -9,8 +9,8 @@ namespace CVT.Galvanize.Api.Services
 {
     public interface IVolunteerService
     {
-        Task<IEnumerable<VolunteerModel>> SearchVolunteers();
-        Task<VolunteerModel> GetById(int Id);
+        Task<PagedResult<VolunteerModel>> SearchVolunteers();
+        Task<VolunteerModel> GetById(int id);
     }
 
     public class VolunteerService : IVolunteerService
@@ -22,7 +22,7 @@ namespace CVT.Galvanize.Api.Services
             _dbContext = dbContext;
         }
 
-        public async Task<IEnumerable<VolunteerModel>> SearchVolunteers()
+        public async Task<PagedResult<VolunteerModel>> SearchVolunteers()
         {
             var volunteers = _dbContext.Volunteers.AsQueryable();
             var result = new List<VolunteerModel>();
@@ -53,7 +53,14 @@ namespace CVT.Galvanize.Api.Services
                 ImportantNames = v.ImportantNames,
                 IsVolunteerCoordinator = v.IsVolunteerCoordinator
             }));
-            return result;
+            return new PagedResult<VolunteerModel>
+            {
+                ResultSet = result,
+                ItemCount = result.Count,
+                StartIndex = 0,
+                TotalItemCount = result.Count,
+                ItemsPerPage = result.Count
+            };
         }
 
         public async Task<VolunteerModel> GetById(int id)
