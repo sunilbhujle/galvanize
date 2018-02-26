@@ -2,12 +2,11 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/src/CVT.Galvanize.Api/obj/project.assets.json
-/src/CVT.Galvanize.Api/obj/**
-/src/CVT.Galvanize.Api/bin/**
-/src/.vs/CVT.Galvanize.Api/v15/**
-/src/CVT.Galvanize.Data/bin/**
-/src/CVT.Galvanize.Data/obj/**
-/src/CVT.Galvanize.Data/StyleCop.Cache
-/src/.vs/config/applicationhost.config
-
+/src/api/CVT.Galvanize.Api/obj/project.assets.json
+/src/api/CVT.Galvanize.Api/obj/**
+/src/api/CVT.Galvanize.Api/bin/**
+/src/api/.vs/CVT.Galvanize.Api/v15/**
+/src/api/CVT.Galvanize.Data/bin/**
+/src/api/CVT.Galvanize.Data/obj/**
+/src/api/CVT.Galvanize.Data/StyleCop.Cache
+/src/.vs/**
